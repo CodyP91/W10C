@@ -1,16 +1,26 @@
-let title = document.getElementById('title');
-title.style.color = '#ff0000';
+let clickMeButton = document.getElementById('click-me');
+let doubleClickMeButton = document.getElementById('double-click-me');
+let hoverMeDiv = document.getElementById('hover-me');
+let pressSpaceButton = document.getElementById('press-space');
 
-let content = document.querySelector('.content');
-content.innerText += ' Sed vitae justo nec mauris sodales viverra.';
+clickMeButton.addEventListener('click', function () {
+  clickMeButton.innerText = 'Clicked!';
+});
 
-let list = document.querySelector('ul');
-list.insertAdjacentHTML('beforeend', '<li class="list-item">Item 4</li>');
+doubleClickMeButton.addEventListener('dblclick', function () {
+  doubleClickMeButton.innerText = 'Double Clicked!';
+});
 
-let listItem = document.querySelector('.list-item');
-listItem.insertAdjacentHTML('beforebegin', '<li class="list-item">Item 0</li>');
+hoverMeDiv.addEventListener('mouseover', function () {
+  hoverMeDiv.innerText = 'Hovering!';
+});
 
-let listItems = document.querySelectorAll('.list-item');
-for (let i = 0; i < listItems.length; i++) {
-  listItems[i].style.fontWeight = 'bold';
-}
+hoverMeDiv.addEventListener('mouseout', function () {
+  hoverMeDiv.innerText = 'Hover Over Me';
+});
+
+pressSpaceButton.addEventListener('keydown', function (event) {
+  if (event.code === 'Space') {
+    pressSpaceButton.innerText = 'Space Pressed!';
+  }
+});
